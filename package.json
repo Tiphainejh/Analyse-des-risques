@@ -1,0 +1,13 @@
+{
+  "name": "web-app",
+  "version": "0.1.0",
+  "description": "Minimal JavaScript + HTML demo",
+  "scripts": {
+    "start": "npx live-server --port=3000",
+    "build": "echo \"No build step configured\"",
+    "deploy": "npx vercel --prod"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}
