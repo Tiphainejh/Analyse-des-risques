@@ -348,17 +348,49 @@
             top: 20px;
         }
         
+        /* Amélioration des listes non ordonnées */
         ul {
-            margin: 10px 0;
-            padding-left: 30px;
+            margin: 15px 0;
+            padding-left: 40px;
         }
         
         li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        /* Amélioration des listes ordonnées */
+        ol {
+            margin: 15px 0;
+            padding-left: 40px;
+            counter-reset: item;
+            list-style-type: none;
+        }
+        
+        ol li {
+            margin-bottom: 12px;
+            padding-left: 10px;
+            line-height: 1.8;
+            position: relative;
+            counter-increment: item;
+        }
+        
+        ol li::before {
+            content: counter(item) ".";
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.1em;
+            position: absolute;
+            left: -30px;
+        }
+        
+        /* Listes ordonnées dans les sections colorées (synthèse) */
+        .section[style*="background: linear-gradient"] ol li::before {
+            color: white;
         }
         
         strong {
-            color: #667eea;
+            color: #f1d93e;
         }
         
         @media (max-width: 768px) {
@@ -392,6 +424,10 @@
             
             .chain-level {
                 width: 95%;
+            }
+            
+            ol {
+                padding-left: 35px;
             }
         }
     </style>
@@ -1534,12 +1570,7 @@
                 </div>
             </div>
             
-            <!-- Footer -->
-            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; text-align: center; margin-top: 50px; border-radius: 10px;">
-                <h2 style="color: white; margin-bottom: 15px;">Bonne chance pour l'examen !</h2>
-                <p style="font-size: 1.1em;">Analyse de documents + QCM</p>
-                <p style="margin-top: 20px; font-style: italic;">"La sécurité n'est pas l'absence de risque, mais sa maîtrise"</p>
-            </div>
+         
             
         </div>
     </div>
